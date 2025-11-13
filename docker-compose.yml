@@ -1,0 +1,14 @@
+services:
+  freqtrade-eov1en:
+    image: freqtradeorg/freqtrade:stable
+    restart: always
+    container_name: freqtrade-eov1en
+    environment:
+      - TZ=Asia/Shanghai
+    ports: ["8991:8080"]
+    volumes:
+      - "./user_data:/freqtrade/user_data"
+      - "./binance/dry_run/E0V1EN.py:/freqtrade/user_data/strategies/E0V1EN.py"
+      - "./binance/dry&live_config/config_usdt_spot.json:/freqtrade/user_data/config.json"
+    command: >
+      trade --strategy E0V1EN

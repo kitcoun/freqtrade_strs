@@ -4,7 +4,7 @@
   "stake_amount": "unlimited",
   "tradable_balance_ratio": 0.99,
   "fiat_display_currency": "CNY",
-  "dry_run": false,
+  "dry_run": true,
   "dry_run_wallet": 1000,
   "cancel_open_orders_on_exit": false,
   "use_exit_signal": true,
@@ -36,7 +36,9 @@
     "key": "",
     "secret": "",
     "ccxt_config": {
-      "enableRateLimit": true
+      "enableRateLimit": true,
+      "httpsProxy": "http://host.docker.internal:7897",
+      "wsProxy": "http://host.docker.internal:7897"
     },
     "ccxt_async_config": {
       "enableRateLimit": true,
@@ -116,14 +118,14 @@
         "balance_dust_level": 0.01
   },
   "api_server": {
-    "enabled": false,
+    "enabled": true,
     "listen_ip_address": "0.0.0.0",
     "listen_port": 8080,
     "verbosity": "info",
     "jwt_secret_key": "somethingrandom",
     "CORS_origins": [],
-    "username": "",
-    "password": ""
+    "username": "123",
+    "password": "123"
   },
   "bot_name": "freqtrade",
   "initial_state": "running",
