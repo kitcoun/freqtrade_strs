@@ -45,26 +45,26 @@
       "rateLimit": 50
     },
     "pair_whitelist": [],
-        "pair_blacklist": [
-        "(BTCUSDT_.*|ETHUSDT_.*)",
-        "(GT|HT|BTC|ETH|BNB|VITE|DGB|NMR|ZIL|QKC|REI)/.*",
-        "(WBTC|BSV|BTCDOM|DEFI)/.*",
-        ".*(_PREMIUM|BEAR|BULL|HALF|HEDGE|DOWN|UP|[1235][SL])/.*",
-        "(AUD|BRZ|CAD|CHF|EUR|GBP|HKD|IDRT|JPY|NGN|RUB|SGD|TRY|UAH|USD|ZAR|UST)/.*",
-        "(BUSD|CUSDT|DAI|PAX|PAXG|SUSD|TUSD|USDC|USDT|VAI|USDN)/.*"
-        ]
+    "pair_blacklist": [
+      "(BTCUSDT_.*|ETHUSDT_.*)",
+      "(GT|HT|BTC|ETH|BNB|VITE|DGB|NMR|ZIL|QKC|REI)/.*",
+      "(WBTC|BSV|BTCDOM|DEFI)/.*",
+      ".*(_PREMIUM|BEAR|BULL|HALF|HEDGE|DOWN|UP|[1235][SL])/.*",
+      "(AUD|BRZ|CAD|CHF|EUR|GBP|HKD|IDRT|JPY|NGN|RUB|SGD|TRY|UAH|USD|ZAR|UST)/.*",
+      "(BUSD|CUSDT|DAI|PAX|PAXG|SUSD|TUSD|USDC|USDT|VAI|USDN)/.*"
+    ]
   },
   "pairlists": [
-        {
-            "method": "VolumePairList",
-            "number_assets": 90,
-            "sort_key": "quoteVolume",
-            "refresh_period": 3600
-        },
-        {
-            "method": "ShuffleFilter"
-        }
-    ],
+    {
+      "method": "VolumePairList",
+      "number_assets": 90,
+      "sort_key": "quoteVolume",
+      "refresh_period": 3600
+    },
+    {
+      "method": "ShuffleFilter"
+    }
+  ],
   "edge": {
     "enabled": false,
     "process_throttle_secs": 3600,
@@ -101,31 +101,31 @@
         "/logs"
       ]
     ],
- "notification_settings": {
-            "status": "silent",
-            "warning": "on",
-            "startup": "silent",
-            "entry": "off",
-            "exit": "off",
-            "entry_cancel": "silent",
-            "exit_cancel": "silent",
-            "entry_fill": "silent",
-            "exit_fill": "silent",
-            "protection_trigger": "silent",
-            "protection_trigger_global": "silent"
-        },
-        "reload": true,
-        "balance_dust_level": 0.01
+    "notification_settings": {
+      "status": "silent",
+      "warning": "on",
+      "startup": "silent",
+      "entry": "off",
+      "exit": "off",
+      "entry_cancel": "silent",
+      "exit_cancel": "silent",
+      "entry_fill": "silent",
+      "exit_fill": "silent",
+      "protection_trigger": "silent",
+      "protection_trigger_global": "silent"
+    },
+    "reload": true,
+    "balance_dust_level": 0.01
   },
   "api_server": {
-    "enabled": true,
+    "enabled": false,
     "listen_ip_address": "0.0.0.0",
     "listen_port": 8080,
     "verbosity": "info",
     "jwt_secret_key": "somethingrandom",
     "CORS_origins": [],
-    "username": "123",
-    "password": "123"
+    "username": "",
+    "password": ""
   },
   "bot_name": "freqtrade",
   "initial_state": "running",
