@@ -3,6 +3,8 @@ services:
     image: freqtradeorg/freqtrade:stable
     restart: always
     container_name: freqtrade-eov1en
+    networks:
+      - proxy_shared_network
     environment:
       - TZ=Asia/Shanghai
     ports: ["8991:8080"]
@@ -45,3 +47,8 @@ services:
       - "./binance/dry&live_config/backtesting.json:/freqtrade/user_data/config.json"
     command: >
       webserver
+
+networks:
+  proxy_shared_network:
+    external: true
+    name: proxy_shared_network

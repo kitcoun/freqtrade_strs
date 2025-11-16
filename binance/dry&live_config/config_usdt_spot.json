@@ -36,9 +36,7 @@
     "key": "",
     "secret": "",
     "ccxt_config": {
-      "enableRateLimit": true,
-      "httpsProxy": "http://host.docker.internal:7897",
-      "wsProxy": "http://host.docker.internal:7897"
+      "enableRateLimit": true
     },
     "ccxt_async_config": {
       "enableRateLimit": true,
