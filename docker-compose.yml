@@ -51,4 +51,3 @@ services:
 networks:
   proxy_shared_network:
     external: true
-    name: proxy_shared_network
