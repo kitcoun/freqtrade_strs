@@ -17,37 +17,6 @@ services:
     command: >
       trade --strategy E0V1EN
 
-  freqtrade-eov1en-backtesting:
-      image: freqtradeorg/freqtrade:stable
-      restart: always
-      container_name: freqtrade-eov1en-backtesting
-      environment:
-        - TZ=Asia/Shanghai
-      ports: ["8992:8080"]
-      volumes:
-        - "./user_data:/freqtrade/user_data"
-        - "./binance/dry_run/E0V1EN.py:/freqtrade/user_data/strategies/E0V1EN.py"
-        - "./binance/dry&live_config/backtesting.json:/freqtrade/user_data/config.json"
-      command: >
-        backtesting 
-        --strategy E0V1EN 
-        --timerange 20230101-20251112
-        --pairs BTC/USDT:USDT ETH/USDT:USDT XRP/USDT:USDT BNB/USDT:USDT SOL/USDT:USDT TRX/USDT:USDT DOGE/USDT:USDT ADA/USDT:USDT HYPE/USDT:USDT LINK/USDT:USDT BCH/USDT:USDT ZEC/USDT:USDT XLM/USDT:USDT XMR/USDT:USDT LTC/USDT:USDT SUI/USDT:USDT AVAX/USDT:USDT HBAR/USDT:USDT 1000SHIB/USDT:USDT TON/USDT:USDT DOT/USDT:USDT ICP/USDT:USDT M/USDT:USDT UNI/USDT:USDT NEAR/USDT:USDT TAO/USDT:USDT WLFI/USDT:USDT AAVE/USDT:USDT
-
-  freqtrade-eov1en-web:
-    image: freqtradeorg/freqtrade:stable
-    restart: always
-    container_name: freqtrade-eov1en-web
-    environment:
-      - TZ=Asia/Shanghai
-    ports: ["8993:8080"]
-    volumes:
-      - "./user_data:/freqtrade/user_data"
-      - "./binance/dry_run/E0V1EN.py:/freqtrade/user_data/strategies/E0V1EN.py"
-      - "./binance/dry&live_config/backtesting.json:/freqtrade/user_data/config.json"
-    command: >
-      webserver
-
 networks:
   proxy_shared_network:
     external: true
