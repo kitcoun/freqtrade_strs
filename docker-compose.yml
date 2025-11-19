@@ -9,7 +9,7 @@ services:
       - TZ=Asia/Shanghai
     ports: ["8991:8080"]
     env_file:
-    - path: .env
+      - path: .env
     volumes:
       - "./user_data:/freqtrade/user_data"
       - "./binance/dry_run/E0V1EN.py:/freqtrade/user_data/strategies/E0V1EN.py"
